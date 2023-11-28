@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+}
+
+.blue-screen {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3881ED; /*메인 컬러-blue*/
+    display: flex;
+}
+
+.title-text {
+    position: absolute;
+    top: 50%; /* 화면 세로 중앙에 위치하도록 top을 50%로 설정 */
+    left: 50%; /* 화면 가로 중앙에 위치하도록 left을 50%로 설정 */
+    transform: translate(-50%, -50%); /* 요소의 가로, 세로 중앙에 정렬 */
+
+    font-family: 'Paytone One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 120px;
+    line-height: 89px;
+    text-align: center;
+
+    color: #FFFFFF;
+    padding: 17px 0;
+}
+
+
+
