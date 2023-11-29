@@ -1,0 +1,27 @@
+.arrow
+{
+    margin-left: 100px;
+    margin-right: 100px;
+    position: relative;
+}
+
+.arrow_mouseleave
+{
+    width: 80px;
+    height: 80px;
+}
+
+.arrow_mouseover
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 80px;
+    height: 80px;
+    display: none;
+}
+
+.arrow:hover .arrow_mouseover
+{
+    display: block;
+}

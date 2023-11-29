@@ -1,0 +1,47 @@
+.title
+{
+    text-align: center;
+    margin: auto;
+    font-size: 400%;
+    color: #518FEB;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+
+.middle
+{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.explanation
+{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.set
+{
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 150%;
+}
+
+.checkbox
+{
+    width: 48px;
+    height: 42px;
+    margin-right: 10px;
+}
+
+.logo
+{
+    margin-top: 80px;
+    margin-left: 85%;
+}
