@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Level1 from './component/level1Description';
+import Level2 from './component/level2Description';
+import Level3 from './component/level3Description';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+      <div className='App'>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/level/1" element={<Level1 />} />
+            <Route path="/level/2" element={<Level2 />} />
+            <Route path="/level/3" element={<Level3 />} />
+          </Routes>
+        </BrowserRouter>
+      </div>
+    );
 }
 
 export default App;
