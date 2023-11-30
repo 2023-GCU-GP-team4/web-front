@@ -3,6 +3,7 @@ import Level1 from './component/level1Description';
 import Level2 from './component/level2Description';
 import Level3 from './component/level3Description';
 import Login from './component/loginPage';
+import WearVR from './component/wearVR';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/level/1" element={<Level1 />} />
           <Route path="/level/2" element={<Level2 />} />
           <Route path="/level/3" element={<Level3 />} />
+          <Route path="/wearVR" element={<WearVR />} />
         </Routes>
       </BrowserRouter>
     </div>
