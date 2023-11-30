@@ -8,6 +8,7 @@ function App() {
       <div className='App'>
         <BrowserRouter>
           <Routes>
+            <Route path="" element={<d/>} />
             <Route path="/level/1" element={<Level1 />} />
             <Route path="/level/2" element={<Level2 />} />
             <Route path="/level/3" element={<Level3 />} />
