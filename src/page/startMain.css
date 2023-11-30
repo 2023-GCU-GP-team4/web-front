@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Paytone One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3881ED; /*메인 컬러-blue*/
+    color: #FFFFFF;
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animation-text {
+    opacity: 0;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out forwards;
+    line-height: 1.5; /* 원하는 세로 간격을 설정합니다. */
+    margin-bottom: 20px; /* 원하는 간격을 설정합니다. */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.image {
+    width: 30%;
+    height: 7vh;
+    background-image: url('logo.png');
+    background-size: contain;
+    background-position: center;
+  }
