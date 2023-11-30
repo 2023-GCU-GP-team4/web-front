@@ -11,6 +11,8 @@ function WearVR() {
                 </a>
                 <br />
                 <img src={wearVR} alt="VR Image" style={{ marginTop: "100px", maxWidth: "100%" }} />
+                <br />
+                <img src="https://drive.google.com/uc?id=1AmDDJJJCTR0pgZVMwlj5MaO6Hon9GPwW" alt="로고" className="logo"></img>
             </div >
         </>
     );
