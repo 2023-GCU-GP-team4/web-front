@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF3CB; /* 배경색 설정 */
+}
+
+.full-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.logo {
+    margin-top: 5vh;
+    margin-left: 85vw; /* 오른쪽으로 이동 */
+    width: 12vw;
+}
