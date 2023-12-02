@@ -1,20 +1,4 @@
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #FFF3CB; /* 배경색 설정 */
-}
-
-.full-screen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    flex-direction: column;
-}
+@import "./mainDesign.css";
 
 .title {
     text-align: center;
@@ -22,6 +6,7 @@ body {
     font-size: 4vh;
     font-size: 4vw;
     color: #B3DA94;
+    font-family: "PaytoneOne";
     word-break: break-all;
     max-width: 80%;
     margin-left: auto;
@@ -54,10 +39,4 @@ body {
     display: flex;
     flex-direction: row;
     font-size: 2vw;
-}
-
-.logo {
-    margin-top: 5vh;
-    margin-left: 85vw; /* 오른쪽으로 이동 */
-    width: 12vw;
 }

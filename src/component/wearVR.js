@@ -1,18 +1,23 @@
 import React from "react";
-import wearVR from "../img/wearVR.png";
+import "./mainDesign.css";
+
+// 사진, VR 사진은 추후 어떤 것으로 할지 결정
+import wearVR from "../img/wearVR.png"; // 변경 전 사진 <img src={wearVR} alt="VR Image" style={{ marginTop: "100px", maxWidth: "100%" }} />
+import VR from "../img/VR.png"  // 변경 후 사진
+import logo from "../img/BottomLogo.png";
 
 function WearVR() {
     return (
         <>
 
-            <div style={{ textAlign: "center", margin: "auto", fontSize: "400%", color: "#518FEB", marginTop: "200px", marginBottom: "50px" }}>
-                <a style={{ fontFamily: "PaytoneOne", textDecoration: "none", color: "#518FEB" }}>
+            <div style={{ textAlign: "center", margin: "auto", fontSize: "400%", color: "#B3DA94", marginTop: "100px", marginBottom: "50px" }}>
+                <a style={{ fontFamily: "PaytoneOne", textDecoration: "none", color: "#B3DA94" }}>
                     Get ready to wear VR
                 </a>
                 <br />
-                <img src={wearVR} alt="VR Image" style={{ marginTop: "100px", maxWidth: "100%" }} />
+                <img src={VR} alt="VR Image" style={{ marginTop: "80px", maxHeight: "35vh" }} />
                 <br />
-                <img src="https://drive.google.com/uc?id=1AmDDJJJCTR0pgZVMwlj5MaO6Hon9GPwW" alt="로고" className="logo"></img>
+                <img src={logo} alt="로고" className="logo"></img>
             </div >
         </>
     );

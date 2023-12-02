@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
+import Situation from './component/situation';
 import Level1 from './component/level1Description';
 import Level2 from './component/level2Description';
 import Level3 from './component/level3Description';
@@ -15,9 +16,12 @@ function App() {
           <Route path="" element={<d/>} />
 
           <Route path="" element={<Login />} />
+
+          <Route path="/situation" element={<Situation />} />
           <Route path="/level/1" element={<Level1 />} />
           <Route path="/level/2" element={<Level2 />} />
           <Route path="/level/3" element={<Level3 />} />
+          
           <Route path="/wearVR" element={<WearVR />} />
 
         </Routes>
