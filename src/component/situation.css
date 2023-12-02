@@ -1,0 +1,123 @@
+@import "./mainDesign.css";
+
+.main
+{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/*presentation*/
+.round_presentation
+{
+    margin: auto;
+    align-items: center;
+    border: 4px solid #B3DA94;
+    background-color: #fff7dd;
+    border-radius: 500px;
+    height: 60vh;
+    width: 60vh;
+    display: flex;
+    margin-right: 10vw;
+    flex-direction: column;
+    color: #B3DA94;
+    text-decoration: none;
+}
+
+.presentation
+{
+    margin: auto;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.presentation_mouseleave
+{
+    height: 35vh;
+    align-self: center;
+    margin: auto;
+}
+
+.presentation_mouseover
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 35vh;
+    display: none;
+}
+
+/*interview*/
+.round_interview
+{
+    margin: auto;
+    align-items: center;
+    border: 4px solid #B3DA94;
+    background-color: #fff7dd;
+    border-radius: 500px;
+    position: relative;
+    height: 60vh;
+    width: 60vh;
+    display: flex;
+    flex-direction: column;
+    color: #B3DA94;
+    text-decoration: none;
+}
+
+.interview
+{
+    margin: auto;
+    position: relative;
+    margin-bottom: 0;
+}
+
+.interview_mouseleave
+{
+    position: relative;
+    align-self: center;
+    margin: auto;
+    height: 35vh;
+    margin-bottom: 0;
+}
+
+.interview_mouseover
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 35vh;
+    display: none;
+    margin-bottom: 0;
+}
+
+h1
+{
+    font-family: "PaytoneOne";
+    margin: 0;
+    margin-bottom: 8vh;
+}
+
+/*mouseover event*/
+.round_presentation:hover
+{
+    border: 4px solid #EAE081;
+    background-color: #FFF6C5;
+}
+
+.round_presentation:hover .presentation_mouseover
+{
+    display: block;
+}
+
+.round_interview:hover
+{
+    border: 4px solid #EAE081;
+    background-color: #FFF6C5;
+}
+
+
+.round_interview:hover .interview_mouseover
+{
+    display: block;
+}
