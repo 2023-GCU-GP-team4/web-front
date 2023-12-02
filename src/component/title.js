@@ -1,23 +1,3 @@
-<<<<<<< HEAD
-import {Link} from 'react-router-dom';
-import "title.css";
-import "font.css";
-
-export default function title()
-{
-    return(
-        <div>
-            <div class="blue-screen">
-                <div class="title-text">
-                    <p>Start</p>
-                    <p>Speech</p>
-                    <p>Pitch</p>
-                </div>
-            </div>
-        </div>
-    )
-}
-=======
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import './title.css'; 
@@ -60,4 +40,3 @@ const Title = () => {
 };
 
 export default Title;
->>>>>>> 608a3a3 (FEAT:add Title page)
