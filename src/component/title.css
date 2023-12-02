@@ -1,14 +1,5 @@
 body {
     margin: 0;
-    font-family: 'Paytone One', sans-serif;
-}
-
-.blue-screen {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-color: #3881ED; /*메인 컬러-blue*/
-    display: flex;
 }
 
 .title-text {
@@ -17,16 +8,118 @@ body {
     left: 50%; /* 화면 가로 중앙에 위치하도록 left을 50%로 설정 */
     transform: translate(-50%, -50%); /* 요소의 가로, 세로 중앙에 정렬 */
 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #FBF0C9; /*메인 컬러-연노랑*/
+}
+
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animation-text {
     font-family: 'Paytone One';
     font-style: normal;
     font-weight: 400;
     font-size: 120px;
-    line-height: 89px;
-    text-align: center;
+    color: #B3DA94;
 
-    color: #FFFFFF;
-    padding: 17px 0;
+    opacity: 0;
+    position: relative;
+    animation: fadeInUp 1s ease-in-out forwards;
+    line-height: 1.5; /* 원하는 세로 간격을 설정합니다. */
+    margin-bottom: 20px; /* 원하는 간격을 설정합니다. */
 }
 
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+.start {
+    animation-delay: 1s;
+}
 
+.speech {
+    animation-delay: 2s;
+}
+
+.pitch {
+    animation-delay: 3s;
+}
+
+/* before & after Login Page */
+.image {
+    width: 8%;
+    height: 12.9vh;
+    background-image: url('logo.png');
+    background-size: auto;
+    position: absolute;
+    top: 344px;
+    right: 530px;
+  }
+
+.title-spitch {
+    font-family: 'Paytone One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 133px;
+    color: #B3DA94;
+
+    opacity: 0;
+    position: relative;
+    bottom: 50px;
+    right: 72px;
+    animation: fadeInUp 1s ease-in-out forwards;
+    
+}
+
+.title-spitch2 {
+    font-family: 'Paytone One';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 133px;
+    color: #B3DA94;
+
+    opacity: 0;
+    position: relative;
+    bottom: 10px;
+    right: 72px;
+    animation: fadeInUp 1s ease-in-out forwards;
+    
+}
+
+.bottom-text {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    color:#53826B;
+
+    position: relative;
+    top: 185px;
+}
+
+.bottom-text-line {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 30px;
+    color:#53826B;
+    text-decoration: underline;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 185px;
+    line-height: 2;
+}
