@@ -7,15 +7,14 @@ import Level3 from './component/level3Description';
 import Login from './component/loginPage';
 import WearVR from './component/wearVR';
 
+// <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
+
 function App() {
   return (
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          // ?
-          <Route path="" element={<d/>} />
-
-          <Route path="" element={<Login />} />
+          <Route path="/" element={<Login />} />
 
           <Route path="/situation" element={<Situation />} />
           <Route path="/level/1" element={<Level1 />} />
@@ -23,7 +22,6 @@ function App() {
           <Route path="/level/3" element={<Level3 />} />
           
           <Route path="/wearVR" element={<WearVR />} />
-
         </Routes>
       </BrowserRouter>
     </div>
