@@ -7,6 +7,8 @@ import Level3 from './component/level3Description';
 import Login from './component/loginPage';
 import WearVR from './component/wearVR';
 import Title from './component/title';
+import BeforeLogin from './component/beforeLogin';
+import AfterLogin from './component/afterLogin';
 
 // <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
 
@@ -24,6 +26,8 @@ function App() {
           
           <Route path="/wearVR" element={<WearVR />} />
           <Route path="/title" element={<Title />} />
+          <Route path="/beforeLogin" element={<BeforeLogin />} />
+          <Route path="/afterLogin" element={<AfterLogin />} />
         </Routes>
       </BrowserRouter>
     </div>
