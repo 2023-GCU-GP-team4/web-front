@@ -1,47 +1,63 @@
-.title
-{
-    text-align: center;
-    margin: auto;
-    font-size: 400%;
-    color: #518FEB;
-    margin-top: 80px;
-    margin-bottom: 50px;
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFF3CB; /* 배경색 설정 */
 }
 
-.middle
-{
+.full-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 5vh;
+    font-size: 4vh;
+    font-size: 4vw;
+    color: #B3DA94;
+    word-break: break-all;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.middle {
     margin: auto;
     align-items: center;
     display: flex;
     flex-direction: row;
 }
 
-.explanation
-{
+.explanation {
     margin: auto;
     align-items: center;
     display: flex;
     flex-direction: column;
 }
 
-.set
-{
+.set {
     margin: auto;
     align-items: center;
     display: flex;
     flex-direction: row;
-    font-size: 150%;
+    font-size: 2vw;
 }
 
-.checkbox
-{
-    width: 48px;
-    height: 42px;
-    margin-right: 10px;
-}
-
-.logo
-{
-    margin-top: 80px;
-    margin-left: 85%;
+.logo {
+    margin-top: 5vh;
+    margin-left: 85vw; /* 오른쪽으로 이동 */
+    width: 12vw;
 }

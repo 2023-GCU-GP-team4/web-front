@@ -10,7 +10,7 @@ import { Level3 } from './level3Description';
 export default function Level2()
 {
     return(
-        <div>
+        <div className="full-screen">
             <div className="title"> <b> LEVEL 2 </b> </div>
             <div className="middle">
                 <Link to="/level/1" className="arrow">
@@ -24,12 +24,12 @@ export default function Level2()
                     </div>
                     <div className="explanation">
                         <div className="set">
-                            <img src="https://drive.google.com/uc?id=1DKSbnAPyvGw-vQCySoDIyEHehrscBrSk" alt="체크박스" className="checkbox"></img>
-                            <h2> Large audience </h2>
+                            <img src="https://drive.google.com/uc?id=1yw9r_8uh7-dr7XVN7n7iTumZCrjDc-SA" alt="체크박스" className="checkbox"></img>
+                            <h2> Small audience </h2>
                         </div>
                         <div className="set">
-                            <img src="https://drive.google.com/uc?id=1DKSbnAPyvGw-vQCySoDIyEHehrscBrSk" alt="체크박스" className="checkbox"></img>
-                            <h2> Time-limited </h2>
+                            <img src="https://drive.google.com/uc?id=1yw9r_8uh7-dr7XVN7n7iTumZCrjDc-SA" alt="체크박스" className="checkbox"></img>
+                            <h2> No time limit </h2>
                         </div>
                     </div>
                 </div>
