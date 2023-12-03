@@ -1,8 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import Situation from './component/situation';
-import React, { useState, useEffect } from 'react';
-import Situation from './component/situation';
 import Level1 from './component/level1Description';
 import Level2 from './component/level2Description';
 import Level3 from './component/level3Description';
@@ -11,12 +9,6 @@ import WearVR from './component/wearVR';
 import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
 import AfterLogin from './component/afterLogin';
-
-// <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
-import Title from './component/title';
-import BeforeLogin from './component/beforeLogin';
-import AfterLogin from './component/afterLogin';
-
 // <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
 
 function App() {
