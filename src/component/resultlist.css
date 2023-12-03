@@ -1,0 +1,70 @@
+@import './mainDesign.css';
+
+.main
+{}
+
+.title
+{}
+
+.list
+{}
+
+.block
+{
+    display: flex;
+    flex-direction: row;
+    border: 4px solid #B3DA94;
+    border-radius: 30px;
+    margin-bottom: 2vw;
+}
+
+.date
+{
+    margin-left: 5vw;
+    font-family: "PaytoneOne";
+    font-size: 2vw;
+}
+
+/*bin image*/
+.bin
+{
+    margin-top: 1.5vw;
+    margin-right: 3vw;
+    margin-left: 60vw;
+    position: relative;
+}
+
+.bin_mouseleave
+{
+    height: 5vw;
+}
+
+.bin_mouseover
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 5vw;
+    display: none;
+}
+
+.block:hover
+{
+    border-color: #EAE081;
+    background-color: #FFF6C5;
+}
+
+.block:hover .date
+{
+    color:#B3DA94;
+}
+
+.bin:hover .bin_mouseover
+{
+    display: block;
+}
+
+.logo
+{
+    margin-bottom: 25px;
+}

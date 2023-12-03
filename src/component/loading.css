@@ -1,0 +1,55 @@
+@import "./mainDesign.css";
+
+.main
+{
+  margin: auto;
+  align-items: center;
+  flex-direction: column;
+  font-family: "PaytoneOne";
+}
+
+.title
+{
+  margin-top: 20vh;
+  color: #B3DA94;
+  font-size: 4vh;
+  font-size: 4vw;
+  margin-bottom: 20vh;
+}
+
+.loadingbar_container
+{
+  width: 60vw;
+  height: 3vw;
+  background-color: #FBF0C9;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loadingbar
+{
+  height: 100%;
+  width: 0;
+  background-color: #B3DA94;
+  border-radius: 10px;
+  transition: width 0.3s ease;
+}
+
+.changed
+{
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5vw;
+}
+
+.logo
+{
+  margin-top: 20vh;
+}
