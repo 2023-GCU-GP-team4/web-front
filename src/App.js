@@ -9,7 +9,6 @@ import WearVR from './component/wearVR';
 import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
 import AfterLogin from './component/afterLogin';
-
 // <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
 
 function App() {
@@ -17,14 +16,19 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="//" element={<Login />} />
+
+          <Route path="/situation" element={<Situation />} />
 
           <Route path="/situation" element={<Situation />} />
           <Route path="/level/1" element={<Level1 />} />
           <Route path="/level/2" element={<Level2 />} />
           <Route path="/level/3" element={<Level3 />} />
-          
+
           <Route path="/wearVR" element={<WearVR />} />
+          <Route path="/title" element={<Title />} />
+          <Route path="/beforeLogin" element={<BeforeLogin />} />
+          <Route path="/afterLogin" element={<AfterLogin />} />
           <Route path="/title" element={<Title />} />
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/afterLogin" element={<AfterLogin />} />
