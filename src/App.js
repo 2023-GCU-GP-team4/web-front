@@ -23,17 +23,12 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path="//" element={<Login />} />
-
-          <Route path="/situation" element={<Situation />} />
-
+          <Route path="" element={<Login />} />
           <Route path="/situation" element={<Situation />} />
           <Route path="/level/1" element={<Level1 />} />
           <Route path="/level/2" element={<Level2 />} />
           <Route path="/level/3" element={<Level3 />} />
-
           <Route path="/wearVR" element={<WearVR />} />
-
           <Route
             path="/loading"
             element={
@@ -43,10 +38,8 @@ function App() {
               />
             }
           />
-
           <Route path="/resultlist" element={<Resultlist />} />
-
-          <Route path="" element={<Navigate to="/login" />} />
+          {/* <Route path="" element={<Navigate to="/login" />} /> */}
           <Route path="/title" element={<Title />} />
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/afterLogin" element={<AfterLogin />} />
@@ -60,6 +53,8 @@ function App() {
 }
 
 export default App;
+
+
 // import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // import { useState } from 'react';
 // import Level1 from './component/level1Description';
