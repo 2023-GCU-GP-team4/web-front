@@ -35,7 +35,7 @@ const Loading = ({ onComplete }) => {
   
     if (isLoadingCompleted) {
       timeoutId = setTimeout(() => {
-        navigate('/resultlist');
+        navigate('/feedbacklist');
       }, 200);
     }
   
@@ -44,13 +44,13 @@ const Loading = ({ onComplete }) => {
   }, [isLoadingCompleted, navigate]);
 
   return (
-    <div className='main'>
-      <h1 className='title'> Great Job! </h1>
+    <div className='main_loading'>
+      <h1 className='title_loading'> Great Job! </h1>
       <div className="loadingbar_container">
         <div className="loadingbar" style={{ width: `${progress}%` }}></div>
         <h3 className='changed'>{isLoadingCompleted ? 'Completed!' : 'Loading...'}</h3>
       </div>
-      <img src={logo} alt="로고" className="logo"></img>
+      <img src={logo} alt="로고" className="logo_loading"></img>
     </div>
   );
 };
