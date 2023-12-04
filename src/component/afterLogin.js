@@ -1,6 +1,9 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
+import {Link} from 'react-router-dom';
+
 import './title.css'; 
+import logo from '../img/mainlogo.png';
 
 const AfterLogin = () => {
   return (
@@ -17,14 +20,11 @@ const AfterLogin = () => {
           timeout={1000} // 애니메이션 지속 시간(ms)
           classNames="fade" // 나타나는 애니메이션
         >
-          <div className="title-spitch2">Spitch</div>
+          <img src={logo} className="mainlogo2"/>
         </CSSTransition>
-
-           <div class="image"></div>
        </div>
-
-           <div class="bottom-text-line">Feedback List</div>
-           <div class="bottom-text-line">Start</div>   
+           <Link to="/feedbacklist" className="bottom-text-line">Feedback List</Link>
+           <Link to="/situation" className="bottom-text-line">Start</Link>   
     </div>
   );
 };

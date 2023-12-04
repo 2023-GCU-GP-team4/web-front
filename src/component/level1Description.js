@@ -21,7 +21,7 @@ export default function Level1()
 {
     return(
         <div className="full-screen">
-            <div className="title"> <b> LEVEL 1 </b> </div>
+            <div className="title_level"> <b> LEVEL 1 </b> </div>
             <div className="contents">
                 <div className="middle">
                     <Link to="/level/3" className="arrow">
@@ -50,7 +50,7 @@ export default function Level1()
                     </Link>
                 </div>
 
-                <img src={logo} alt="로고" className="logo"></img>
+                <img src={logo} alt="로고" className="logo_level"></img>
             </div>
         </div>
     )

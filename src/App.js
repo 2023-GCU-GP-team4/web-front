@@ -8,7 +8,7 @@ import Level3 from './component/level3Description';
 import Login from './component/loginPage';
 import WearVR from './component/wearVR';
 import Loading from './component/loading';
-import Resultlist from './component/resultlist';
+import FeedbackList from './component/feedbackList';
 import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
 import AfterLogin from './component/afterLogin';
@@ -44,7 +44,7 @@ function App() {
             }
           />
 
-          <Route path="/resultlist" element={<Resultlist />} />
+          <Route path="/feedbacklist" element={<FeedbackList />} />
 
           <Route path="" element={<Navigate to="/login" />} />
           <Route path="/title" element={<Title />} />

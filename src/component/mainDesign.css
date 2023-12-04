@@ -15,9 +15,3 @@ body {
     height: 100vh;
     flex-direction: column;
 }
-
-.logo {
-    margin-top: 5vh;
-    margin-left: 85vw; /* 오른쪽으로 이동 */
-    width: 12vw;
-}
