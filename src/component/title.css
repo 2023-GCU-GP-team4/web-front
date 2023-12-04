@@ -118,7 +118,7 @@ body {
     position: relative;
     margin: auto;
     width: 30vw;
-    animation: fadeInUp 1s ease-in-out forwards;
+    animation: fadeInUpSpitch 1s ease-in-out forwards;
 }
 
 .mainlogo2 {
@@ -126,7 +126,7 @@ body {
     position: relative;
     margin: auto;
     width: 30vw;
-    animation: fadeInUp 1s ease-in-out forwards;
+    animation: fadeInUpSpitch 1s ease-in-out forwards;
 
 }
 

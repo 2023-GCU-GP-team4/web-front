@@ -12,6 +12,7 @@ import FeedbackList from './component/feedbackList';
 import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
 import AfterLogin from './component/afterLogin';
+import FirebaseDB from './firebase/FirebaseDB';
 
 // <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
 
@@ -23,7 +24,7 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path="//" element={<Login />} />
+          <Route path="//" element={<Title />} />
 
           <Route path="/situation" element={<Situation />} />
 
@@ -46,13 +47,12 @@ function App() {
 
           <Route path="/feedbacklist" element={<FeedbackList />} />
 
-          <Route path="" element={<Navigate to="/login" />} />
-          <Route path="/title" element={<Title />} />
+          <Route path="" element={<Navigate to="/title" />} />
+          <Route path="/Login" element={<Login />} />
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/afterLogin" element={<AfterLogin />} />
-          <Route path="/title" element={<Title />} />
-          <Route path="/beforeLogin" element={<BeforeLogin />} />
-          <Route path="/afterLogin" element={<AfterLogin />} />
+
+          <Route path="/firebaseDB" element={<FirebaseDB />} />
         </Routes>
       </BrowserRouter>
     </div>
