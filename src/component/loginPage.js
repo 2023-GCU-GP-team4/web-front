@@ -124,6 +124,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import google from "../img/googlelogin.png";
 import logo from '../img/mainlogo.png';
+import axios from 'axios';
 
 const Login = () => {
     const [userData, setUserData] = useState(null);
@@ -142,6 +143,14 @@ const Login = () => {
             });
     }
 
+    // function handleGoogleLogin() {
+    //     axios.post('http://localhost:8000/login')
+    //         .then(response => {
+    //             console.log(response);
+    //             navigate('/afterLogin');
+    //         });
+    // }
+
 
     return (
         <div>
@@ -157,7 +166,7 @@ const Login = () => {
                     timeout={1000} // 애니메이션 지속 시간(ms)
                     classNames="fade" // 나타나는 애니메이션
                 >
-                    <img src={logo} className="mainlogo"/>
+                    <img src={logo} className="mainlogo" />
                 </CSSTransition>
 
                 <button onClick={handleGoogleLogin} style={{
