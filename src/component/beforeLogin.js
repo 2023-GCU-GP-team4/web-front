@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+import { useSpring, animated } from 'react-spring';
 import { CSSTransition } from 'react-transition-group';
 import './title.css'; 
 

@@ -34,16 +34,46 @@ body {
     font-size: 120px;
     color: #B3DA94;
 
-    opacity: 0;
+    opacity: 1;
     position: relative;
-    animation: fadeInUp 1s ease-in-out forwards;
-    line-height: 1.5;
-    /* 원하는 세로 간격을 설정합니다. */
-    margin-bottom: 20px;
-    /* 원하는 간격을 설정합니다. */
+    line-height: 1.5; /* 원하는 세로 간격을 설정합니다. */
+    margin-bottom: 20px; /* 원하는 간격을 설정합니다. */
 }
 
-@keyframes fadeInUp {
+@keyframes fadeInOutStart {
+    0% {
+        opacity: 1;
+        transform: translateY(-120px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOutSpeech {
+    0% {
+        opacity: 1;
+        transform: translateY(10px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOutPitch {
+    0% {
+        opacity: 1;
+        transform: translateY(120px);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUpSpitch {
     0% {
         opacity: 0;
         transform: translateY(20px);
@@ -56,15 +86,30 @@ body {
 }
 
 .start {
-    animation-delay: 1s;
+    animation: fadeInOutStart 1s ease-in-out forwards;
+    /* animation-delay: 1s; */
 }
 
 .speech {
-    animation-delay: 2s;
+    animation: fadeInOutSpeech 1s ease-in-out forwards;
+    /* animation-delay: 2s; */
 }
 
 .pitch {
-    animation-delay: 3s;
+    animation: fadeInOutPitch 1s ease-in-out forwards;
+    /* animation-delay: 3s; */
+}
+
+.spitch {
+    opacity: 0;
+    animation: fadeInUpSpitch 2s ease-in-out forwards;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top:50%;
+    
+    animation-delay: 1s;
 }
 
 /* before & after Login Page */
