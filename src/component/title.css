@@ -36,8 +36,10 @@ body {
 
     opacity: 1;
     position: relative;
-    line-height: 1.5; /* 원하는 세로 간격을 설정합니다. */
-    margin-bottom: 20px; /* 원하는 간격을 설정합니다. */
+    line-height: 1.5;
+    /* 원하는 세로 간격을 설정합니다. */
+    margin-bottom: 20px;
+    /* 원하는 간격을 설정합니다. */
 }
 
 @keyframes fadeInOutStart {
@@ -45,6 +47,7 @@ body {
         opacity: 1;
         transform: translateY(-120px);
     }
+
     100% {
         opacity: 0;
         transform: translateY(0);
@@ -56,6 +59,7 @@ body {
         opacity: 1;
         transform: translateY(10px);
     }
+
     100% {
         opacity: 0;
         transform: translateY(0);
@@ -67,6 +71,7 @@ body {
         opacity: 1;
         transform: translateY(120px);
     }
+
     100% {
         opacity: 0;
         transform: translateY(0);
@@ -107,8 +112,8 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    top:50%;
-    
+    top: 50%;
+
     animation-delay: 1s;
 }
 
