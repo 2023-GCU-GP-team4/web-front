@@ -25,14 +25,14 @@ export default function Situation()
                         <img src={presentation_mouseleave} alt="발표" className="presentation_mouseleave"></img>
                         <img src={presentation_mouseover} alt="발표" className="presentation_mouseover"></img>
                     </div>
-                    <h1>PRESENTATION</h1>
+                    <h1 className="name">PRESENTATION</h1>
                 </Link>
                 <Link to="/wearVR" className="round_interview">
                     <div className="interview">
                         <img src={interview_mouseleave} alt="면접" className="interview_mouseleave"></img>
                         <img src={interview_mouseover} alt="면접" className="interview_mouseover"></img>
                     </div>
-                    <h1>INTERVIEW</h1>
+                    <h1 className="name">INTERVIEW</h1>
                 </Link>
             </div>
             <img src={logo} alt="로고" className="logo"/>

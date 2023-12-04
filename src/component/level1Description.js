@@ -5,10 +5,6 @@ import "./levelDescriptionBlockEvent.css";
 import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
 
-// level마다 변경, level(page) 이동
-import { Level3 } from './level3Description';
-import { Level2 } from './level2Description';
-
 // 사진
 // 고정 
 import arrowL_mouseleave from "../img/level_arrow_left_mouseleave.png";
