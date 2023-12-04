@@ -123,6 +123,7 @@ import { auth } from "../firebase/config";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import google from "../img/googlelogin.png";
+import logo from '../img/mainlogo.png';
 
 const Login = () => {
     const [userData, setUserData] = useState(null);
@@ -156,10 +157,8 @@ const Login = () => {
                     timeout={1000} // 애니메이션 지속 시간(ms)
                     classNames="fade" // 나타나는 애니메이션
                 >
-                    <div className="title-spitch">Spitch</div>
+                    <img src={logo} className="mainlogo"/>
                 </CSSTransition>
-
-                <div class="image"></div>
 
                 <button onClick={handleGoogleLogin} style={{
                     background: '#FBF0C9', border: 'hidden', position: "relative", top: "185px", cursor: "pointer", width: '480px', height: '75px', borderRadius: '50px'
