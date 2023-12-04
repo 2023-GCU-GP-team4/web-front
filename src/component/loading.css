@@ -1,6 +1,4 @@
-@import "./mainDesign.css";
-
-.main
+.main_loading
 {
   margin: auto;
   align-items: center;
@@ -8,17 +6,18 @@
   font-family: "PaytoneOne";
 }
 
-.title
+.title_loading
 {
-  margin-top: 20vh;
+  text-align: center;
+  margin: 20vh auto 15vh;
   color: #B3DA94;
   font-size: 4vh;
   font-size: 4vw;
-  margin-bottom: 20vh;
 }
 
 .loadingbar_container
 {
+  margin: auto;
   width: 60vw;
   height: 3vw;
   background-color: #FBF0C9;
@@ -49,7 +48,9 @@
   font-size: 1.5vw;
 }
 
-.logo
+.logo_loading
 {
-  margin-top: 20vh;
+  margin-top: 30vh;
+  margin-left: 85vw; /* 오른쪽으로 이동 */
+  width: 12vw;
 }

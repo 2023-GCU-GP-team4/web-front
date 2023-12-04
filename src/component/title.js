@@ -1,8 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
+import { useNavigate } from 'react-router-dom';
 import './title.css'; 
 
 const Title = () => {
+  const navigate = useNavigate(); // useNavigate 훅 사용
+
+  useEffect(() => {
+    // 애니메이션이 끝난 후 4초 뒤에 '/login' 페이지로 이동
+    const timeoutId = setTimeout(() => {
+      navigate('/login');
+    }, 4000);
+
+    return () => clearTimeout(timeoutId);
+  }, [navigate]);
+
   return (
     <div>
         {/* 폰트 */}
