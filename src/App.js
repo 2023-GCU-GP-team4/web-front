@@ -24,7 +24,8 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path="" element={<Login />} />
+          <Route path="//" element={<Title />} />
+            
           <Route path="/situation" element={<Situation />} />
           <Route path="/level/1" element={<Level1 />} />
           <Route path="/level/2" element={<Level2 />} />
@@ -39,12 +40,10 @@ function App() {
               />
             }
           />
-          <Route path="/feedbacklist" element={<FeedbackList />} />
-          {/* <Route path="" element={<Navigate to="/login" />} /> */}
-          <Route path="/title" element={<Title />} />
+          <Route path="" element={<Navigate to="/title" />} />
+          <Route path="/Login" element={<Login />} />
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/afterLogin" element={<AfterLogin />} />
-
         </Routes>
       </BrowserRouter>
     </div>
