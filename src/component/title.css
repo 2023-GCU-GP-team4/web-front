@@ -113,42 +113,19 @@ body {
 }
 
 /* before & after Login Page */
-.image {
-    width: 8%;
-    height: 12.9vh;
-    background-image: url('logo.png');
-    background-size: auto;
-    position: absolute;
-    top: 344px;
-    right: 530px;
-}
-
-.title-spitch {
-    font-family: 'Paytone One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 133px;
-    color: #B3DA94;
-
-    opacity: 1;
+.mainlogo {
+    opacity: 0;
     position: relative;
-    bottom: 50px;
-    right: 72px;
+    margin: auto;
+    width: 30vw;
     animation: fadeInUp 1s ease-in-out forwards;
-
 }
 
-.title-spitch2 {
-    font-family: 'Paytone One';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 133px;
-    color: #B3DA94;
-
-    opacity: 1;
+.mainlogo2 {
+    opacity: 0;
     position: relative;
-    bottom: 10px;
-    right: 72px;
+    margin: auto;
+    width: 30vw;
     animation: fadeInUp 1s ease-in-out forwards;
 
 }
