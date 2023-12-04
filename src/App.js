@@ -12,7 +12,7 @@ import FeedbackList from './component/feedbackList';
 import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
 import AfterLogin from './component/afterLogin';
-import FirebaseDB from './firebase/FirebaseDB';
+import UploadFile from './component/UploadFile';
 
 // <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
 
@@ -25,18 +25,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="//" element={<Title />} />
-
-          <Route path="/situation" element={<Situation />} />
-
+            
           <Route path="/situation" element={<Situation />} />
           <Route path="/level/1" element={<Level1 />} />
           <Route path="/level/2" element={<Level2 />} />
           <Route path="/level/3" element={<Level3 />} />
-
           <Route path="/wearVR" element={<WearVR />} />
-
-          <Route
-            path="/loading"
+          <Route path="/uploadFile" element={<UploadFile />} />
+          <Route path="/loading"
             element={
               <Loading
                 progress={loadingProgress}
@@ -44,15 +40,10 @@ function App() {
               />
             }
           />
-
-          <Route path="/feedbacklist" element={<FeedbackList />} />
-
           <Route path="" element={<Navigate to="/title" />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/afterLogin" element={<AfterLogin />} />
-
-          <Route path="/firebaseDB" element={<FirebaseDB />} />
         </Routes>
       </BrowserRouter>
     </div>
@@ -60,6 +51,8 @@ function App() {
 }
 
 export default App;
+
+
 // import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 // import { useState } from 'react';
 // import Level1 from './component/level1Description';
