@@ -13,6 +13,7 @@ import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
 import AfterLogin from './component/afterLogin';
 import UploadFile from './component/UploadFile';
+import AxiosTest from './component/axiosTest';
 
 // <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/title" element={<Title />} />
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/afterLogin" element={<AfterLogin />} />
+          <Route path="/test" element={<AxiosTest />} />
 
         </Routes>
       </BrowserRouter>
