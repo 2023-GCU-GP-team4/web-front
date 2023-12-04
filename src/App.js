@@ -31,6 +31,7 @@ function App() {
           <Route path="/level/2" element={<Level2 />} />
           <Route path="/level/3" element={<Level3 />} />
           <Route path="/wearVR" element={<WearVR />} />
+          <Route path='/feedbacklist' element={<FeedbackList />} />
           <Route path="/uploadFile" element={<UploadFile />} />
           <Route path="/loading"
             element={
