@@ -34,6 +34,14 @@ const Title = () => {
         >
           <div className="animation-text pitch">Pitch</div>
         </CSSTransition>
+
+        <CSSTransition
+          in={true}
+          timeout={1000}
+          classNames="fade"
+        >
+          <div className="animation-text spitch">Spitch</div>
+        </CSSTransition>
       </div>
     </div>
   );

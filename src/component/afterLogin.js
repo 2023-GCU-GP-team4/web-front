@@ -21,7 +21,7 @@ const AfterLogin = () => {
         </CSSTransition>
 
            <div class="image"></div>
-       </div>
+     </div>
 
            <div class="bottom-text-line">Feedback List</div>
            <div class="bottom-text-line">Start</div>   
