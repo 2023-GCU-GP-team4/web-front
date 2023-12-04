@@ -4,9 +4,12 @@ body {
 
 .title-text {
     position: absolute;
-    top: 50%; /* 화면 세로 중앙에 위치하도록 top을 50%로 설정 */
-    left: 50%; /* 화면 가로 중앙에 위치하도록 left을 50%로 설정 */
-    transform: translate(-50%, -50%); /* 요소의 가로, 세로 중앙에 정렬 */
+    top: 50%;
+    /* 화면 세로 중앙에 위치하도록 top을 50%로 설정 */
+    left: 50%;
+    /* 화면 가로 중앙에 위치하도록 left을 50%로 설정 */
+    transform: translate(-50%, -50%);
+    /* 요소의 가로, 세로 중앙에 정렬 */
 
     overflow: hidden;
     display: flex;
@@ -14,7 +17,8 @@ body {
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: #FBF0C9; /*메인 컬러-연노랑*/
+    background-color: #FBF0C9;
+    /*메인 컬러-연노랑*/
 }
 
 .title-container {
@@ -74,6 +78,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
@@ -116,7 +121,7 @@ body {
     position: absolute;
     top: 344px;
     right: 530px;
-  }
+}
 
 .title-spitch {
     font-family: 'Paytone One';
@@ -130,7 +135,7 @@ body {
     bottom: 50px;
     right: 72px;
     animation: fadeInUp 1s ease-in-out forwards;
-    
+
 }
 
 .title-spitch2 {
@@ -145,13 +150,13 @@ body {
     bottom: 10px;
     right: 72px;
     animation: fadeInUp 1s ease-in-out forwards;
-    
+
 }
 
 .bottom-text {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 30px;
-    color:#53826B;
+    color: #53826B;
 
     position: relative;
     top: 185px;
@@ -160,7 +165,7 @@ body {
 .bottom-text-line {
     font-family: 'Noto Sans KR', sans-serif;
     font-size: 30px;
-    color:#53826B;
+    color: #53826B;
     text-decoration: underline;
 
     display: flex;
