@@ -12,8 +12,10 @@ import FeedbackList from './component/feedbackList';
 import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
 import AfterLogin from './component/afterLogin';
-import UploadFile from './component/UploadFile';
 import AxiosTest from './component/axiosTest';
+import UploadFile from './component/UploadFile';
+import UploadScript from './component/UploadScript';
+import UploadPrStatement from './component/UploadPrStatement';
 
 // <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
 
@@ -33,8 +35,10 @@ function App() {
           <Route path="/level/3" element={<Level3 />} />
           <Route path="/wearVR" element={<WearVR />} />
           <Route path='/feedbacklist' element={<FeedbackList />} />
-          <Route path="/uploadFile" element={<UploadFile />} />
           <Route path="/feedbackList" element={<FeedbackList />} />
+          <Route path="/uploadFile" element={<UploadFile />} />
+          <Route path="/uploadScript" element={<UploadScript />} />
+          <Route path="/uploadPrStatement" element={<UploadPrStatement />} />
           <Route path="/loading"
             element={
               <Loading

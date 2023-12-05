@@ -44,7 +44,7 @@ export default function Level3()
                             </div>
                         </div>
                     </div>
-                    <Link to="/level/1" className="arrow">
+                    <Link to="/uploadFile" className="arrow">
                         <img src={arrowR_mouseleave} alt="넘어가기" className="arrow_mouseleave"></img>
                         <img src={arrowR_mouseover} alt="넘어가기_전환" className="arrow_mouseover"></img>
                     </Link>
