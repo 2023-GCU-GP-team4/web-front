@@ -7,7 +7,9 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import google from "../img/googlelogin.png";
 import logo from '../img/mainlogo.png';
-import { collection, getDoc, doc, doc, addDoc, setDoc } from 'firebase/firestore';
+import { collection, doc, addDoc, setDoc } from 'firebase/firestore';
+
+
 
 const Login = () => {
     const [userData, setUserData] = useState(null);
@@ -21,26 +23,19 @@ const Login = () => {
             const user = result.user;
             console.log(user.uid);
 
-            // Use doc function to get a reference to the document
-            const userRef = doc(firestore, "users", user.uid);
-            const userDoc = await getDoc(userRef);
+            const userRef = collection(firestore, "users");
+            const docRef = await addDoc(userRef, {
+                feedback: [],
+                simulation: [],
+            });
 
-            if (!userDoc.exists()) {
-                // Document doesn't exist, create it
-                const docRef = await addDoc(collection(firestore, "users"), {
-                    feedback: [],
-                    simulation: [],
-                });
+            const docRef2 = await setDoc(doc(firestore, "users", user.uid), {
+                feedback: [],
+                simulation: [],
+            });
 
-                const docRef2 = await setDoc(doc(firestore, "users", user.uid), {
-                    feedback: [],
-                    simulation: [],
-                });
-
-                console.log("Document written with ID: ", docRef.id);
-            }
-
-            navigate(`/afterLogin`);
+            console.log("Document written with ID: ", docRef.id);
+            navigate('/afterLogin');
         } catch (error) {
             console.error("Error signing in: ", error);
         }
