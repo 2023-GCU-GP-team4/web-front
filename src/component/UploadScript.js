@@ -3,7 +3,7 @@ import "./levelDescriptionArrowEvent.css";
 import "./levelDescriptionBlockEvent.css";
 
 import { Link } from 'react-router-dom';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import logo from "../img/BottomLogo.png";
 import arrowL_mouseleave from "../img/level_arrow_left_mouseleave.png";
@@ -15,14 +15,19 @@ import upload_image from "../img/upload-file.svg"
 
 export default function UploadScript() {
     const [selectedFiles, setSelectedFiles] = useState([]);
+    const [showUploadButton, setShowUploadButton] = useState(false);
     const fileInputRef = useRef(null);
 
+    useEffect(() => {
+        // 파일 선택 여부에 따라 업로드 버튼을 표시 또는 숨김
+        setShowUploadButton(selectedFiles.length > 0);
+    }, [selectedFiles]);
+
     const handleFileChange = (e) => {
-        setSelectedFiles([...selectedFiles, ...e.target.files]);
+        setSelectedFiles(Array.from(e.target.files));
     };
 
     const handleUpload = () => {
-        // 선택된 파일을 업로드하거나 필요한 처리를 수행
         if (selectedFiles.length > 0) {
             console.log("Uploading files:", selectedFiles);
         } else {
@@ -31,7 +36,6 @@ export default function UploadScript() {
     };
 
     const handleClickImage = () => {
-        // 파일 선택(input type="file") 엘리먼트를 클릭
         fileInputRef.current.click();
     };
 
@@ -71,18 +75,28 @@ export default function UploadScript() {
                             ))}
                         </div>
                         <div className="explanation">
-                            <h2> Drag & Drop a File Here </h2>
-                            <button style={{
-                                    fontFamily: 'PaytoneOne',
-                                    fontSize: '16px',
-                                    color: '#333',
-                                    backgroundColor: '#fff',
-                                    border: '3px solid #ffec45',
-                                    padding: '10px 15px',
-                                    cursor: 'pointer',
-                                }} onClick={handleUpload}>
-                                Upload
-                            </button>
+                        <h2 style={{ display: selectedFiles.length > 0 ? 'none' : 'block' }}>
+                            Drag & Drop a File Here </h2>
+                            {showUploadButton && (
+                                <button
+                                    style={{
+                                        fontFamily: 'PaytoneOne',
+                                        fontSize: '16px',
+                                        color: '#333',
+                                        backgroundColor: '#fff',
+                                        border: '4px solid #B3DA94',
+                                        padding: '12px 15px',
+                                        cursor: 'pointer',
+                                        position: 'absolute',
+                                        top: '52%',
+                                        left: '57%',
+                                        transform: 'translate(-50%, -50%)',
+                                    }}
+                                    onClick={handleUpload}
+                                >
+                                    Upload
+                                </button>
+                            )}
                         </div>
                     </div>
                     <Link to="/uploadPrStatement" className="arrow">

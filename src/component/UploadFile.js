@@ -3,7 +3,7 @@ import "./levelDescriptionArrowEvent.css";
 import "./levelDescriptionBlockEvent.css";
 
 import { Link } from 'react-router-dom';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 
 import logo from "../img/BottomLogo.png";
 import arrowL_mouseleave from "../img/level_arrow_left_mouseleave.png";
@@ -14,25 +14,28 @@ import upload_image from "../img/upload-file.svg";
 
 export default function UploadFile() {
     const [selectedFiles, setSelectedFiles] = useState([]);
+    const [showUploadButton, setShowUploadButton] = useState(false);
     const fileInputRef = useRef(null);
 
+    useEffect(() => {
+        // 파일 선택 여부에 따라 업로드 버튼을 표시 또는 숨김
+        setShowUploadButton(selectedFiles.length > 0);
+    }, [selectedFiles]);
+
     const handleFileChange = (e) => {
-        // 선택된 파일 목록을 상태에 업데이트
-        setSelectedFiles([...selectedFiles, ...e.target.files]);
+        // 한 번에 모든 선택을 처리 -- 했는데도 두 번 실행됨
+        setSelectedFiles(Array.from(e.target.files));
     };
 
     const handleUpload = () => {
-        // 선택된 파일을 업로드하거나 필요한 처리를 수행
         if (selectedFiles.length > 0) {
             console.log("Uploading files:", selectedFiles);
-            // 여기에서 파일 업로드 또는 처리를 수행할 수 있습니다.
         } else {
             console.log("No files selected");
         }
     };
 
     const handleClickImage = () => {
-        // 파일 선택(input type="file") 엘리먼트를 클릭
         fileInputRef.current.click();
     };
 
@@ -51,7 +54,6 @@ export default function UploadFile() {
                             <label htmlFor="fileInput" onClick={handleClickImage}>
                                 <img src={upload_image} alt="이미지" className="upload_image"></img>
                             </label>
-                            {/* 파일 입력 엘리먼트 추가 (display: none으로 숨김) */}
                             <input
                                 type="file"
                                 accept=".pdf, .ppt, .pptx"  // 업로드 가능한 파일 형식 지정
@@ -73,18 +75,29 @@ export default function UploadFile() {
                             ))}
                         </div>
                         <div className="explanation">
-                            <h2> Drag & Drop a File Here </h2>
-                            <button style={{
-                                    fontFamily: 'PaytoneOne', // 원하는 폰트로 변경
-                                    fontSize: '16px', // 원하는 글자 크기로 변경
-                                    color: '#333', // 원하는 글자 색상으로 변경
-                                    backgroundColor: '#fff', // 원하는 배경색으로 변경
-                                    border: '3px solid #ffec45', // 원하는 테두리 스타일 및 색상으로 변경
-                                    padding: '10px 15px', // 원하는 내부 여백으로 변경
-                                    cursor: 'pointer',
-                                }} onClick={handleUpload}>
-                                Upload
-                            </button>
+                            <h2 style={{ display: selectedFiles.length > 0 ? 'none' : 'block' }}>
+                                Drag & Drop a File Here
+                            </h2>
+                            {showUploadButton && (
+                                <button
+                                    style={{
+                                        fontFamily: 'PaytoneOne',
+                                        fontSize: '16px',
+                                        color: '#333',
+                                        backgroundColor: '#fff',
+                                        border: '4px solid #B3DA94',
+                                        padding: '12px 15px',
+                                        cursor: 'pointer',
+                                        position: 'absolute',
+                                        top: '52%',
+                                        left: '57%',
+                                        transform: 'translate(-50%, -50%)',
+                                    }}
+                                    onClick={handleUpload}
+                                >
+                                    Upload
+                                </button>
+                            )}
                         </div>
                     </div>
                     <Link to="/uploadScript" className="arrow">
@@ -97,3 +110,4 @@ export default function UploadFile() {
         </div>
     );
 }
+
