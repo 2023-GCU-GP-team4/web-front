@@ -7,7 +7,7 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import google from "../img/googlelogin.png";
 import logo from '../img/mainlogo.png';
-import { collection, getDoc, doc, addDoc } from 'firebase/firestore';
+import { collection, getDoc, doc, doc, addDoc, setDoc } from 'firebase/firestore';
 
 const Login = () => {
     const [userData, setUserData] = useState(null);
@@ -28,7 +28,11 @@ const Login = () => {
             if (!userDoc.exists()) {
                 // Document doesn't exist, create it
                 const docRef = await addDoc(collection(firestore, "users"), {
-                    uid: user.uid,
+                    feedback: [],
+                    simulation: [],
+                });
+
+                const docRef2 = await setDoc(doc(firestore, "users", user.uid), {
                     feedback: [],
                     simulation: [],
                 });
