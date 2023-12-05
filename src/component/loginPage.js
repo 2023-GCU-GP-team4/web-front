@@ -29,7 +29,7 @@ const Login = () => {
                 simulation: [],
             });
 
-            const docRef2 = await setDoc(doc(firestore, "users",user.uid), {
+            const docRef2 = await setDoc(doc(firestore, "users", user.uid), {
                 feedback: [],
                 simulation: [],
             });
