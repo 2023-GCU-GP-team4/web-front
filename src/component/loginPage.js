@@ -1,40 +1,41 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import './title.css';
 import { app, auth, firestore } from '../firebase/config';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
 import google from "../img/googlelogin.png";
 import logo from '../img/mainlogo.png';
-import { collection, doc, addDoc, setDoc } from 'firebase/firestore';
-
-
+import { collection, doc, setDoc, getDoc } from 'firebase/firestore';
 
 const Login = () => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
 
-
     async function handleGoogleLogin() {
         const provider = new GoogleAuthProvider();
+
         try {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
             console.log(user.uid);
 
-            const userRef = collection(firestore, "users");
-            const docRef = await addDoc(userRef, {
-                feedback: [],
-                simulation: [],
-            });
+            const userRef = doc(firestore, "users", user.uid);
 
-            const docRef2 = await setDoc(doc(firestore, "users", user.uid), {
-                feedback: [],
-                simulation: [],
-            });
+            // Check if the document exists before setting data
+            const userDoc = await getDoc(userRef);
 
-            console.log("Document written with ID: ", docRef.id);
+            if (!userDoc.exists()) {
+                // Document doesn't exist, create it
+                await setDoc(userRef, {
+                    feedback: [],
+                    simulation: [],
+                });
+
+                console.log("Document created for ID: ", user.uid);
+            }
+
             navigate('/afterLogin');
         } catch (error) {
             console.error("Error signing in: ", error);
@@ -51,18 +52,16 @@ const Login = () => {
 
             <div className="title-container">
                 <CSSTransition
-                    in={true} // 애니메이션을 항상 보여주도록 설정
-                    timeout={1000} // 애니메이션 지속 시간(ms)
-                    classNames="fade" // 나타나는 애니메이션
+                    in={true}
+                    timeout={1000}
+                    classNames="fade"
                 >
                     <img src={logo} className="mainlogo" />
                 </CSSTransition>
 
                 <button onClick={handleGoogleLogin} style={{
                     background: '#FBF0C9', border: 'hidden', position: "relative", top: "185px", cursor: "pointer", width: '480px', height: '75px', borderRadius: '50px'
-                }}><img style={{ background: "white", width: '480px', height: '75px', borderRadius: '30px' }} src={google}></img></button>
-
-
+                }}><img style={{ background: "white", width: '480px', height: '75px', borderRadius: '30px' }} src={google} alt="Google Login"></img></button>
             </div>
         </div >
     );
