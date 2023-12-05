@@ -13,6 +13,7 @@ import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
 import AfterLogin from './component/afterLogin';
 import UploadFile from './component/UploadFile';
+import AxiosTest from './component/axiosTest';
 
 // <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
 
@@ -25,12 +26,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="//" element={<Title />} />
-            
+
           <Route path="/situation" element={<Situation />} />
           <Route path="/level/1" element={<Level1 />} />
           <Route path="/level/2" element={<Level2 />} />
           <Route path="/level/3" element={<Level3 />} />
           <Route path="/wearVR" element={<WearVR />} />
+          <Route path='/feedbacklist' element={<FeedbackList />} />
           <Route path="/uploadFile" element={<UploadFile />} />
           <Route path="/feedbackList" element={<FeedbackList />} />
           <Route path="/loading"
@@ -45,6 +47,7 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/afterLogin" element={<AfterLogin />} />
+          <Route path="/test" element={<AxiosTest />} />
         </Routes>
       </BrowserRouter>
     </div>
