@@ -25,6 +25,11 @@
     height: 20vw;
 }
 
+.upload_image
+{
+    width: 150px;
+    margin-left: 150px;
+}
 .pic_mouseover
 {
     position: absolute;
