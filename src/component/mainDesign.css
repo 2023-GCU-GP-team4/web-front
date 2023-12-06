@@ -6,12 +6,45 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #FFF3CB; /* 배경색 설정 */
-}
-
-.full-screen {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     flex-direction: column;
+}
+
+.full-screen {
+    
+}
+
+/*uploadFile*/
+.blockUploadFile
+{
+    margin: auto;
+    align-items: center;
+    width: 60vw;
+    height: 50vh;
+    border: 4px solid #B3DA94;
+    background-color: #fff7dd;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: row;
+    color: #B3DA94;
+    font-family: "PaytoneOne";
+}
+
+.upload_image
+{
+    size: 5vw;
+}
+
+.uploadFileButton_select, .uploadFileButton_reselect, .uploadFileButton_upload
+{
+    font-size: 2vw;
+    border-radius: 3pxd;
+    background-color: #fff7dd;
+    padding: 0.5vw;
+    border: 4px solid #B3DA94;
+    border-radius: 10px;
+    position: absolute;
 }
