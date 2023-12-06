@@ -28,7 +28,7 @@ export default function Level3()
                         <img src={arrowL_mouseleave} alt="돌아가기" className="arrow_mouseleave"></img>
                         <img src={arrowL_mouseover} alt="돌아가기_전환" className="arrow_mouseover"></img>
                     </Link>
-                    <div className="outline">
+                    <Link to='/uploadFile' className="outline">
                         <div className="pic">
                             <img src={pic_mouseleave} alt="이미지" className="pic_mouseleave"></img>
                             <img src={pic_mouseover} alt="이미지" className="pic_mouseover"></img>
@@ -43,7 +43,7 @@ export default function Level3()
                                 <h2> Time-limited </h2>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                     <Link to="/uploadFile" className="arrow">
                         <img src={arrowR_mouseleave} alt="넘어가기" className="arrow_mouseleave"></img>
                         <img src={arrowR_mouseover} alt="넘어가기_전환" className="arrow_mouseover"></img>

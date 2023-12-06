@@ -2,21 +2,17 @@ import "./levelDescription.css";
 import "./levelDescriptionArrowEvent.css";
 import "./levelDescriptionBlockEvent.css";
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React, { useState, useRef, useEffect } from 'react';
 
 import logo from "../img/BottomLogo.png";
-import arrowL_mouseleave from "../img/level_arrow_left_mouseleave.png";
-import arrowL_mouseover from "../img/level_arrow_left_mouseover.png";
-import arrowR_mouseleave from "../img/level_arrow_right_mouseleave.png";
-import arrowR_mouseover from "../img/level_arrow_right_mouseover.png";
-
 import upload_image from "../img/upload-file.svg"
 
 export default function UploadPrStatement() {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [showUploadButton, setShowUploadButton] = useState(false);
     const fileInputRef = useRef(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         // 파일 선택 여부에 따라 업로드 버튼을 표시 또는 숨김
@@ -31,6 +27,7 @@ export default function UploadPrStatement() {
         // 선택된 파일을 업로드하거나 필요한 처리를 수행
         if (selectedFiles.length > 0) {
             console.log("Uploading files:", selectedFiles);
+            navigate("/wearVR");
         } else {
             console.log("No files selected");
         }
@@ -45,10 +42,6 @@ export default function UploadPrStatement() {
             <div className="title_level"> <b> Attach Personal Statement </b> </div>
             <div className="contents">
                 <div className="middle">
-                    <Link to="/uploadScript" className="arrow">
-                        <img src={arrowL_mouseleave} alt="돌아가기" className="arrow_mouseleave"></img>
-                        <img src={arrowL_mouseover} alt="돌아가기_전환" className="arrow_mouseover"></img>
-                    </Link>
                     <div className="outline">
                         <div className="pic">
                         <label htmlFor="fileInput" onClick={handleClickImage}>
@@ -99,10 +92,6 @@ export default function UploadPrStatement() {
                             )}
                         </div>
                     </div>
-                    <Link to="/level/1" className="arrow">
-                        <img src={arrowR_mouseleave} alt="넘어가기" className="arrow_mouseleave"></img>
-                        <img src={arrowR_mouseover} alt="넘어가기_전환" className="arrow_mouseover"></img>
-                    </Link>
                 </div>
                 <img src={logo} alt="로고" className="logo_level"></img>
             </div>

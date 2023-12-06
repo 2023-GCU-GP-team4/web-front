@@ -35,7 +35,7 @@ const Loading = ({ onComplete }) => {
   
     if (isLoadingCompleted) {
       timeoutId = setTimeout(() => {
-        navigate('/feedbacklist');
+        navigate('/report');
       }, 200);
     }
   
