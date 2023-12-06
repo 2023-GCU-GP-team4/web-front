@@ -2,10 +2,10 @@ import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import {Link} from 'react-router-dom';
 
-import './title.css'; 
+import './titleAnimation.css'; 
 import logo from '../img/mainlogo.png';
 
-const AfterLogin = () => {
+const Main = () => {
   return (
     <div>
         {/* 폰트 */}
@@ -29,4 +29,4 @@ const AfterLogin = () => {
   );
 };
 
-export default AfterLogin;
+export default Main;

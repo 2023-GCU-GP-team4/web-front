@@ -1,6 +1,6 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
-import './title.css'; 
+import './titleAnimation.css'; 
 
 const BeforeLogin = () => {
   return (

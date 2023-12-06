@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { useNavigate } from 'react-router-dom';
-import './title.css'; 
+import './titleAnimation.css'; 
 
 const Title = () => {
   const navigate = useNavigate(); // useNavigate 훅 사용
