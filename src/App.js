@@ -16,8 +16,7 @@ import AxiosTest from './component/axiosTest';
 import UploadFile from './component/UploadFile';
 import UploadScript from './component/UploadScript';
 import UploadPrStatement from './component/UploadPrStatement';
-
-// <Route path="" element={<d/>} /> <-- 이건 혹시 뭘까요..?
+import Report from './component/report/report';
 
 function App() {
   const [loadingProgress, setLoadingProgress] = useState(0);
@@ -39,6 +38,7 @@ function App() {
           <Route path="/uploadFile" element={<UploadFile />} />
           <Route path="/uploadScript" element={<UploadScript />} />
           <Route path="/uploadPrStatement" element={<UploadPrStatement />} />
+          <Route path="/report" element={<Report/>} />
           <Route path="/loading"
             element={
               <Loading
