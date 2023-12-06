@@ -17,6 +17,7 @@ import UploadFile from './component/UploadFile';
 import UploadScript from './component/UploadScript';
 import UploadPrStatement from './component/UploadPrStatement';
 import Report from './component/report/report';
+import AudioRecord from './component/record';
 
 function App() {
   const [loadingProgress, setLoadingProgress] = useState(0);
@@ -52,6 +53,7 @@ function App() {
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/afterLogin" element={<AfterLogin />} />
           <Route path="/test" element={<AxiosTest />} />
+          <Route path='/record' element={<AudioRecord />} />
         </Routes>
       </BrowserRouter>
     </div>
