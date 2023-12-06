@@ -5,13 +5,13 @@ import Situation from './component/situation';
 import Level1 from './component/level1Description';
 import Level2 from './component/level2Description';
 import Level3 from './component/level3Description';
-import Login from './component/loginPage';
+import Login from './component/login';
 import WearVR from './component/wearVR';
 import Loading from './component/loading';
 import FeedbackList from './component/feedbackList';
 import Title from './component/title';
 import BeforeLogin from './component/beforeLogin';
-import AfterLogin from './component/afterLogin';
+import Main from './component/main';
 import AxiosTest from './component/axiosTest';
 import UploadFile from './component/UploadFile';
 import UploadScript from './component/UploadScript';
@@ -50,7 +50,7 @@ function App() {
           <Route path="" element={<Navigate to="/title" />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/beforeLogin" element={<BeforeLogin />} />
-          <Route path="/afterLogin" element={<AfterLogin />} />
+          <Route path="/main" element={<Main />} />
           <Route path="/test" element={<AxiosTest />} />
           <Route path='/record' element={<AudioRecord />} />
         </Routes>

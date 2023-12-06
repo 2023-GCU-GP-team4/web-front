@@ -1,7 +1,7 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { useNavigate } from 'react-router-dom';
-import './title.css';
+import './titleAnimation.css';
 import { app, auth, firestore } from '../firebase/config';
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useState } from "react";
@@ -36,7 +36,7 @@ const Login = () => {
                 console.log("Document created for ID: ", user.uid);
             }
 
-            navigate('/afterLogin');
+            navigate('/main');
         } catch (error) {
             console.error("Error signing in: ", error);
         }

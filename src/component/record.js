@@ -1,6 +1,13 @@
 import React, { useState, useCallback } from "react";
+import { useNavigate } from "react-router";
 
 const AudioRecord = () => {
+  const navigate = useNavigate();
+    let timeoutId;
+    timeoutId = setTimeout(() => {
+        navigate('/loading');
+    }, 5000);
+
   const [stream, setStream] = useState();
   const [media, setMedia] = useState();
   const [onRec, setOnRec] = useState(true);
