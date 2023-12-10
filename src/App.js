@@ -16,7 +16,7 @@ import AxiosTest from './component/axiosTest';
 import UploadFile from './component/UploadFile';
 import UploadScript from './component/UploadScript';
 import UploadPrStatement from './component/UploadPrStatement';
-import Report from './component/report/report';
+import Feedback from './component/feedback';
 import AudioRecord from './component/record';
 
 function App() {
@@ -38,7 +38,7 @@ function App() {
           <Route path="/uploadFile" element={<UploadFile />} />
           <Route path="/uploadScript" element={<UploadScript />} />
           <Route path="/uploadPrStatement" element={<UploadPrStatement />} />
-          <Route path="/report" element={<Report/>} />
+          <Route path="/feedback" element={<Feedback/>} />
           <Route path="/loading"
             element={
               <Loading

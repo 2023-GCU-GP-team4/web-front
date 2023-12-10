@@ -1,0 +1,65 @@
+@import "./level.css";
+
+.blockUploadFile
+{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 60vw;
+    height: 50vh;
+    border: 4px solid var(--beforeBorder);
+    background-color: var(--beforeBackground);
+    border-radius: 30px;
+    color: var(--beforeBorder);
+    position: relative;
+}
+
+.upload_image
+{
+    margin: auto;
+    margin-top: 8vw;
+    width: 10vw;
+}
+
+.align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3vw;
+}
+
+.uploadFileButton_set
+{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5vw;
+}
+
+.uploadFileButton
+{
+    width: 8vw;
+    font-size: 2vw;
+    border-radius: 10px;
+    background-color: var(--beforeBackground);
+    padding: 0.5vw;
+    border: 4px solid var(--beforeBorder);
+    margin-left: 2vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.selected-file-name
+{
+    font-size: 1.7vw;
+    max-width: 30vw;
+    margin-bottom: 5vw;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: center;
+}

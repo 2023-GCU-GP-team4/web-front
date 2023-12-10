@@ -1,6 +1,4 @@
-import "./levelDescription.css";
-import "./levelDescriptionArrowEvent.css";
-import "./levelDescriptionBlockEvent.css";
+import "./level.css";
 
 import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
