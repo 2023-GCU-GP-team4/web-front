@@ -1,24 +1,23 @@
-import "./levelDescription.css";
+import "./upload.css";
 
 import { useNavigate } from 'react-router-dom';
 import React, { useState, useRef, useEffect } from 'react';
-
 import logo from "../img/BottomLogo.png";
-import upload_image from "../img/upload-file.svg";
+import upload_image from "../img/uploadFile.png";
 
 export default function UploadFile() {
     const [selectedFiles, setSelectedFiles] = useState([]);
-    const [showUploadButton, setShowUploadButton] = useState(false);
+    const [showUploadButtons, setShowUploadButtons] = useState(false);
     const fileInputRef = useRef(null);
     const navigate = useNavigate();
 
     useEffect(() => {
         // 파일 선택 여부에 따라 업로드 버튼을 표시 또는 숨김
-        setShowUploadButton(selectedFiles.length > 0);
+        setShowUploadButtons(selectedFiles.length > 0);
     }, [selectedFiles]);
 
     const handleFileChange = (e) => {
-        // 한 번에 모든 선택을 처리 -- 했는데도 두 번 실행됨
+        // 한 번에 모든 선택을 처리
         setSelectedFiles(Array.from(e.target.files));
     };
 
@@ -31,52 +30,51 @@ export default function UploadFile() {
         }
     };
 
-    const handleClickImage = () => {
-        fileInputRef.current.click();
-    };
-
     return (
         <div className="full-screen">
             <div className="title_level"> <b> Attach Presentation Slide </b> </div>
             <div className="contents">
                 <div className="middle">
                     <div className="blockUploadFile">
-                        <div className="pic">
-                            <img src={upload_image} alt="이미지" className="upload_image"></img>
-                            {/* label을 사용하여 버튼을 클릭하면 파일 선택 */}
-                            <label htmlFor="fileInput" onClick={handleClickImage}>
-                                <div className="uploadFileButton_select">Select</div>
-                            </label>
-                            <input
-                                type="file"
-                                accept=".pdf, .ppt, .pptx"  // 업로드 가능한 파일 형식 지정
-                                onChange={handleFileChange}
-                                className="upload_image"
-                                multiple
-                                ref={fileInputRef}
-                                style={{ display: 'none' }}
-                                id="fileInput"
-                            />
-                            {/* 선택된 파일을 미리보기로 표시하는 부분 */}
-                            {selectedFiles.map((file, index) => (
-                                <img
-                                    key={index}
-                                    src={URL.createObjectURL(file)}
-                                    alt={file.name}
-                                    className="selected-file-preview"
+                        <img src={upload_image} alt="이미지" className="upload_image"></img>
+                        <div>
+                            <div className="align">
+                                <h1 style={{ display: selectedFiles.length > 0 ? 'none' : 'block' }}>
+                                    Only .pdf, .ppt, .pptx enable
+                                </h1>
+
+                                {/* select 버튼*/}
+                                {!showUploadButtons && (
+                                    <label htmlFor="fileInput" className="uploadFileButton">
+                                        Select
+                                    </label>
+                                )}
+                                <input
+                                    type="file"
+                                    accept=".pdf, .ppt, .pptx"
+                                    onChange={handleFileChange}
+                                    className="upload_image"
+                                    multiple
+                                    ref={fileInputRef}
+                                    style={{ display: 'none' }}
+                                    id="fileInput"
                                 />
-                            ))}
-                        </div>
-                        <div className="explanation">
-                            <h2 style={{ display: selectedFiles.length > 0 ? 'none' : 'block' }}>
-                                Only .pdf, .ppt, .pptx enable
-                            </h2>
-                            {showUploadButton && (
-                                <div className="uploadFileButton_after">
-                                    <div className="uploadFileButton_reselect" onClick={handleUpload}>Reselect</div>
-                                    <div className="uploadFileButton_upload" onClick={handleUpload}>Upload</div>
-                                </div>
-                            )}
+                            </div>
+    
+                            <div className="align">
+                                {/* reselect, upload 버튼*/}
+                                {selectedFiles.map((file, index) => (
+                                    <div key={index} className="selected-file-name">
+                                        {file.name}
+                                    </div>
+                                ))}
+                                {showUploadButtons && (
+                                    <div className="uploadFileButton_set">
+                                        <label htmlFor="fileInput" className="uploadFileButton">Reselect</label>
+                                        <div className="uploadFileButton" onClick={handleUpload}>Upload</div>
+                                    </div>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -85,4 +83,3 @@ export default function UploadFile() {
         </div>
     );
 }
-

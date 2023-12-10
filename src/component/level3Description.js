@@ -1,6 +1,4 @@
-import "./levelDescription.css";
-import "./levelDescriptionArrowEvent.css";
-import "./levelDescriptionBlockEvent.css";
+import "./level.css";
 
 import {Link} from 'react-router-dom';
 import React, { Component } from 'react';
@@ -44,7 +42,7 @@ export default function Level3()
                             </div>
                         </div>
                     </Link>
-                    <Link to="/uploadFile" className="arrow">
+                    <Link to="/level/1" className="arrow">
                         <img src={arrowR_mouseleave} alt="넘어가기" className="arrow_mouseleave"></img>
                         <img src={arrowR_mouseover} alt="넘어가기_전환" className="arrow_mouseover"></img>
                     </Link>

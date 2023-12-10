@@ -1,3 +1,16 @@
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+/* 색상 */
+:root {
+    --backgroundColor: #FFF3CB;
+    --beforeBackground : #FFF7DD;
+    --beforeBorder: #B3DA94;
+    --afterBackground: #FFF6C5;
+    --afterBorder: #EAE081;
+}
+
+/* 기본 배경 */
 body {
     margin: 0;
     padding: 0;
@@ -5,47 +18,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #FFF3CB; /* 배경색 설정 */
+    background-color: var(--backgroundColor); /* 배경색 설정 */
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
     flex-direction: column;
     font-family: "PaytoneOne";
-}
-
-.full-screen {
-    
-}
-
-/*uploadFile*/
-.blockUploadFile
-{
-    margin: auto;
-    align-items: center;
-    width: 60vw;
-    height: 50vh;
-    border: 4px solid #B3DA94;
-    background-color: #fff7dd;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: row;
-    color: #B3DA94;
-    font-family: "PaytoneOne";
-}
-
-.upload_image
-{
-    size: 5vw;
-}
-
-.uploadFileButton_select, .uploadFileButton_reselect, .uploadFileButton_upload
-{
-    font-size: 2vw;
-    border-radius: 3pxd;
-    background-color: #fff7dd;
-    padding: 0.5vw;
-    border: 4px solid #B3DA94;
-    border-radius: 10px;
-    position: absolute;
 }
