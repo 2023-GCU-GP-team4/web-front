@@ -1,5 +1,6 @@
 @import "./mainDesign.css";
 
+/* Level */
 .title_level {
     text-align: center;
     margin-bottom: 5vh;
@@ -104,12 +105,6 @@
     height: 20vw;
 }
 
-.upload_image
-{
-    width: 150px;
-    margin-left: 150px;
-}
-
 .pic_mouseover
 {
     position: absolute;
@@ -135,4 +130,68 @@
 .outline:hover .pic_mouseover
 {
     display: block;
+}
+
+
+/* Interview */
+/* 가운데 블럭 */
+.outline_interview
+{
+    margin: auto;
+    align-items: center;
+    width: 20vw;
+    height: 50vh;
+    border: 4px solid var(--beforeBorder);
+    background-color: var(--beforeBackground);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.outline_interview h3
+{
+    color: var(--beforeBorder);
+    font-family: "PaytoneOne";
+    font-size: 4vw;
+    margin: auto;
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+}
+
+.picInt
+{
+    position: relative;
+    margin-bottom: 5vw;
+}
+
+.picInt_mouseleave
+{
+    height: 12vw;
+}
+
+.picInt_mouseover
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 12vw;
+    display: none;
+}
+
+.outline_interview:hover {
+    border-radius: 30px;
+    border-color: var(--afterBorder);
+    background-color: var(--afterBackground);
+}
+
+.outline_interview:hover .picInt_mouseover
+{
+    display: block;
+}
+
+/* upload */
+.upload_image
+{
+    width: 150px;
+    margin-left: 150px;
 }

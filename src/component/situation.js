@@ -22,7 +22,7 @@ export default function Situation()
                     </div>
                     <h1 className="name">PRESENTATION</h1>
                 </Link>
-                <Link to="/uploadPrStatement" className="round_interview">
+                <Link to="/interview" className="round_interview">
                     <div className="interview">
                         <img src={interview_mouseleave} alt="면접" className="interview_mouseleave"></img>
                         <img src={interview_mouseover} alt="면접" className="interview_mouseover"></img>
