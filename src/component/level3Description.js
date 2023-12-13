@@ -26,7 +26,7 @@ export default function Level3()
                         <img src={arrowL_mouseleave} alt="돌아가기" className="arrow_mouseleave"></img>
                         <img src={arrowL_mouseover} alt="돌아가기_전환" className="arrow_mouseover"></img>
                     </Link>
-                    <Link to='/uploadFile' className="outline">
+                    <Link to='/uploadFile' className="outline" style={{ textDecoration: 'none' }}>
                         <div className="pic">
                             <img src={pic_mouseleave} alt="이미지" className="pic_mouseleave"></img>
                             <img src={pic_mouseover} alt="이미지" className="pic_mouseover"></img>

@@ -5,6 +5,7 @@ import Situation from './component/situation';
 import Level1 from './component/level1Description';
 import Level2 from './component/level2Description';
 import Level3 from './component/level3Description';
+import Interview from './component/interview';
 import Login from './component/login';
 import WearVR from './component/wearVR';
 import Loading from './component/loading';
@@ -33,6 +34,7 @@ function App() {
           <Route path="/level/1" element={<Level1 />} />
           <Route path="/level/2" element={<Level2 />} />
           <Route path="/level/3" element={<Level3 />} />
+          <Route path="/interview" element={<Interview />} />
           <Route path="/wearVR" element={<WearVR />} />
           <Route path="/feedbackList" element={<FeedbackList />} />
           <Route path="/uploadFile" element={<UploadFile />} />
