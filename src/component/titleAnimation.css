@@ -1,6 +1,4 @@
-body {
-    margin: 0;
-}
+@import './mainDesign.css';
 
 .title-text {
     position: absolute;
@@ -160,6 +158,16 @@ body {
     align-items: center;
     flex-direction: column;
     position: relative;
-    top: 185px;
+    top: 200px; /* logout과의 간격 조절 */
     line-height: 2;
+    text-align: center;
+}
+
+.logout
+{
+    cursor: pointer;
+    color: LightSalmon;
+    font-size: 2.5vw;
+    text-align: center;
+    margin-top: 10px;
 }
