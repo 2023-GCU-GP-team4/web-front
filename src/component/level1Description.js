@@ -1,7 +1,7 @@
 import "./level.css";
-
-import {Link} from 'react-router-dom';
+import { collection, doc, setDoc, getDoc } from 'firebase/firestore';
 import React, { Component } from 'react';
+import { getFirestore, addDoc, updateDoc } from 'firebase/firestore';
 
 // 사진
 // 고정 
@@ -14,19 +14,37 @@ import logo from "../img/BottomLogo.png";
 // level마다 변경
 import pic_mouseleave from "../img/level1_mouseleave.png";
 import pic_mouseover from "../img/level1_mouseover.png";
+import { Link, useNavigate } from 'react-router-dom';
 
-export default function Level1()
-{
-    return(
+export default function Level1() {
+    const navigate = useNavigate();
+    const urlParts = window.location.pathname.split('/');
+    const id = urlParts[urlParts.length - 1];
+
+    const handleContentClick = async () => {
+        // Update the document in Firebase with level: 1
+        const firestore = getFirestore();
+        const simulationCollection = collection(firestore, 'simulation');
+        const simulationDoc = doc(simulationCollection, id);
+
+        try {
+            await updateDoc(simulationDoc, { level: 1 });
+            console.log('Document updated successfully with level: 1');
+        } catch (error) {
+            console.error('Error updating document:', error.message);
+        }
+    };
+
+    return (
         <div className="full-screen">
             <div className="title_level"> <b> LEVEL 1 </b> </div>
-            <div className="contents">
+            <div className="contents" >
                 <div className="middle">
-                    <Link to="/level/3" className="arrow">
+                    <Link to={`/level/3/${id}`} className="arrow">
                         <img src={arrowL_mouseleave} alt="돌아가기" className="arrow_mouseleave"></img>
                         <img src={arrowL_mouseover} alt="돌아가기_전환" className="arrow_mouseover"></img>
                     </Link>
-                    <Link to='/uploadFile' className="outline" style={{ textDecoration: 'none' }}>
+                    <Link to='/uploadFile' className="outline" style={{ textDecoration: 'none' }} onClick={handleContentClick}>
                         <div className="pic">
                             <img src={pic_mouseleave} alt="이미지" className="pic_mouseleave"></img>
                             <img src={pic_mouseover} alt="이미지" className="pic_mouseover"></img>
@@ -42,7 +60,7 @@ export default function Level1()
                             </div>
                         </div>
                     </Link>
-                    <Link to="/level/2" className="arrow">
+                    <Link to={`/level/2/${id}`} className="arrow">
                         <img src={arrowR_mouseleave} alt="넘어가기" className="arrow_mouseleave"></img>
                         <img src={arrowR_mouseover} alt="넘어가기_전환" className="arrow_mouseover"></img>
                     </Link>
@@ -51,5 +69,5 @@ export default function Level1()
                 <img src={logo} alt="로고" className="logo_level"></img>
             </div>
         </div>
-    )
+    );
 }
