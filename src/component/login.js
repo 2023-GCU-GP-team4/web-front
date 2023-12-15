@@ -12,6 +12,7 @@ import { collection, doc, setDoc, getDoc } from 'firebase/firestore';
 const Login = () => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
+    const [user, setUser] = useState(null);
 
     async function handleGoogleLogin() {
         const provider = new GoogleAuthProvider();
@@ -20,7 +21,7 @@ const Login = () => {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
             console.log(user.uid);
-
+            setUser(user);
             const userRef = doc(firestore, "users", user.uid);
 
             // Check if the document exists before setting data
@@ -40,6 +41,7 @@ const Login = () => {
         } catch (error) {
             console.error("Error signing in: ", error);
         }
+        return { user };
     }
 
     return (

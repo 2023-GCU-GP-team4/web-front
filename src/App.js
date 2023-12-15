@@ -28,20 +28,21 @@ function App() {
     <div className='App'>
       <BrowserRouter>
         <Routes>
-          <Route path="//" element={<Title />} />
+          <Route path="/title" element={<Title />} />
 
           <Route path="/situation" element={<Situation />} />
-          <Route path="/level/1" element={<Level1 />} />
-          <Route path="/level/2" element={<Level2 />} />
-          <Route path="/level/3" element={<Level3 />} />
-          <Route path="/interview" element={<Interview />} />
+          <Route path="/level/1/:id" element={<Level1 />} />
+          <Route path="/level/2/:id" element={<Level2 />} />
+          <Route path="/level/3/:id" element={<Level3 />} />
+          <Route path="/interview/:id" element={<Interview />} />
           <Route path="/wearVR" element={<WearVR />} />
           <Route path="/feedbackList" element={<FeedbackList />} />
           <Route path="/uploadFile" element={<UploadFile />} />
           <Route path="/uploadScript" element={<UploadScript />} />
           <Route path="/uploadPrStatement" element={<UploadPrStatement />} />
-          <Route path="/feedback" element={<Feedback/>} />
-          <Route path="/loading"
+          <Route path="/feedback" element={<Feedback />} />
+          <Route
+            path="/loading"
             element={
               <Loading
                 progress={loadingProgress}
@@ -54,7 +55,7 @@ function App() {
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/main" element={<Main />} />
           <Route path="/test" element={<AxiosTest />} />
-          <Route path='/record' element={<AudioRecord />} />
+          <Route path="/record" element={<AudioRecord />} />
         </Routes>
       </BrowserRouter>
     </div>
