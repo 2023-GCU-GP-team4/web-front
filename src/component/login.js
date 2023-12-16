@@ -11,6 +11,7 @@ import logo from '../img/mainlogo.png';
 const Login = () => {
     const [userData, setUserData] = useState(null);
     const navigate = useNavigate();
+    const [user, setUser] = useState(null);
 
     useEffect(() => {
         const storedUid = localStorage.getItem('uid');
@@ -26,9 +27,7 @@ const Login = () => {
             const result = await signInWithPopup(auth, provider);
             const user = result.user;
             console.log(user.uid);
-
-            const userRef = doc(firestore, 'users', user.uid);
-
+          
             const userDoc = await getDoc(userRef);
 
             if (!userDoc.exists()) {
@@ -46,6 +45,7 @@ const Login = () => {
         } catch (error) {
             console.error('Error signing in: ', error);
         }
+        return { user };
     }
 
     return (
