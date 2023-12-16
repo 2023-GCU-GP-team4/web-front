@@ -35,14 +35,14 @@ function App() {
           <Route path="/level/2/:id" element={<Level2 />} />
           <Route path="/level/3/:id" element={<Level3 />} />
           <Route path="/interview/:id" element={<Interview />} />
-          <Route path="/wearVR" element={<WearVR />} />
-          <Route path="/feedbackList" element={<FeedbackList />} />
-          <Route path="/uploadFile" element={<UploadFile />} />
-          <Route path="/uploadScript" element={<UploadScript />} />
-          <Route path="/uploadPrStatement" element={<UploadPrStatement />} />
-          <Route path="/feedback" element={<Feedback />} />
+          <Route path="/wearVR/:id" element={<WearVR />} />
+          <Route path="/feedbackList/:id" element={<FeedbackList />} />
+          <Route path="/uploadFile/:id" element={<UploadFile />} />
+          <Route path="/uploadScript/:id" element={<UploadScript />} />
+          <Route path="/uploadPrStatement/:id" element={<UploadPrStatement />} />
+          <Route path="/feedback/:id" element={<Feedback />} />
           <Route
-            path="/loading"
+            path="/loading/:id"
             element={
               <Loading
                 progress={loadingProgress}

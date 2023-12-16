@@ -8,9 +8,12 @@ import logo from "../img/BottomLogo.png";
 
 function WearVR() {
     const navigate = useNavigate();
+    const urlParts = window.location.pathname.split('/');
+    const id = urlParts[urlParts.length - 1];
+    
     let timeoutId;
     timeoutId = setTimeout(() => {
-        navigate('/loading');
+        navigate(`/loading/${id}`);
     }, 5000);
     
     return (

@@ -9,7 +9,10 @@ export default function UploadFile() {
     const [selectedFiles, setSelectedFiles] = useState([]);
     const [showUploadButtons, setShowUploadButtons] = useState(false);
     const fileInputRef = useRef(null);
+
     const navigate = useNavigate();
+    const urlParts = window.location.pathname.split('/');
+    const id = urlParts[urlParts.length - 1];
 
     useEffect(() => {
         // 파일 선택 여부에 따라 업로드 버튼을 표시 또는 숨김
@@ -24,7 +27,7 @@ export default function UploadFile() {
     const handleUpload = () => {
         if (selectedFiles.length > 0) {
             console.log("Uploading files:", selectedFiles);
-            navigate("/uploadScript");
+            navigate(`/uploadScript/${id}`);
         } else {
             console.log("No files selected");
         }

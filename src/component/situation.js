@@ -6,7 +6,7 @@ import presentation_mouseover from "../img/situation_presentation_mouseover.png"
 import interview_mouseleave from "../img/situation_interview_mouseleave.png";
 import interview_mouseover from "../img/situation_interview_mouseover.png";
 import logo from "../img/BottomLogo.png";
-import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { onAuthStateChanged, auth, firestore } from '../firebase/config';
 
 export default function Situation() {
@@ -34,7 +34,7 @@ export default function Situation() {
 
             const simulationCollection = collection(getFirestore(), 'simulation');
 
-            const docRef = await addDoc(simulationCollection, { situation: "presentation", user: user.uid });
+            const docRef = await addDoc(simulationCollection, { situation: "presentation", user: user.uid, date: serverTimestamp() });
 
             console.log("Document ID:", docRef.id);
             navigate(`/level/1/${docRef.id}`);
@@ -52,7 +52,7 @@ export default function Situation() {
 
             const simulationCollection = collection(getFirestore(), 'simulation');
 
-            const docRef = await addDoc(simulationCollection, { situation: "interview", user: user.uid });
+            const docRef = await addDoc(simulationCollection, { situation: "interview", user: user.uid, date: serverTimestamp() });
 
             console.log("Document ID:", docRef.id);
             navigate(`/interview/${docRef.id}`);
@@ -67,20 +67,20 @@ export default function Situation() {
     return (
         <div className="full-screen">
             <div className="main_situation">
-                <Link to="/level/1" className="round_presentation" onClick={handlePresentationButtonClick}>
+                <div className="round_presentation" onClick={handlePresentationButtonClick}>
                     <div className="presentation">
                         <img src={presentation_mouseleave} alt="발표" className="presentation_mouseleave" />
                         <img src={presentation_mouseover} alt="발표" className="presentation_mouseover" />
                     </div>
                     <h1 className="name">PRESENTATION</h1>
-                </Link>
-                <Link to="/interview" className="round_interview" onClick={handleInterviewButtonClick}>
+                </div>
+                <div className="round_interview" onClick={handleInterviewButtonClick}>
                     <div className="interview">
                         <img src={interview_mouseleave} alt="면접" className="interview_mouseleave" />
                         <img src={interview_mouseover} alt="면접" className="interview_mouseover" />
                     </div>
                     <h1 className="name">INTERVIEW</h1>
-                </Link>
+                </div>
             </div>
             <img src={logo} alt="로고" className="logo_situation" />
 

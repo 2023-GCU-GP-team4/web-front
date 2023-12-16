@@ -11,6 +11,8 @@ const Loading = ({ onComplete }) => {
   const [progress, setProgress] = useState(0);
   const [isLoadingCompleted, setIsLoadingCompleted] = useState(false);
   const navigate = useNavigate();
+  const urlParts = window.location.pathname.split('/');
+  const id = urlParts[urlParts.length - 1];
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -35,7 +37,7 @@ const Loading = ({ onComplete }) => {
   
     if (isLoadingCompleted) {
       timeoutId = setTimeout(() => {
-        navigate('/feedback');
+        navigate(`/feedback/${id}`);
       }, 200);
     }
   
