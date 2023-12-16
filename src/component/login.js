@@ -22,7 +22,7 @@ const Login = () => {
             const user = result.user;
             console.log(user.uid);
             setUser(user);
-            const userRef = doc(firestore, "users", user.uid);
+            const user = doc(firestore, "users", user.uid);
 
             // Check if the document exists before setting data
             const userDoc = await getDoc(userRef);
