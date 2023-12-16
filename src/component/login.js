@@ -25,7 +25,7 @@ const Login = () => {
 
         try {
             const result = await signInWithPopup(auth, provider);
-            const user = result.user;
+            const userRef = result.user;
             console.log(user.uid);
           
             const userDoc = await getDoc(userRef);
