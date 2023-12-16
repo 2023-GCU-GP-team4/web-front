@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDownload } from '@fortawesome/free-solid-svg-icons';
-import { getFirestore, collection, getDocs, doc, getDoc } from 'firebase/firestore';
+import { getFirestore, doc, getDoc } from 'firebase/firestore';
 
 // 사진
 import logo from "../img/BottomLogo.png";
@@ -52,7 +52,7 @@ function Report() {
     } catch (error) {
       console.error('Error fetching simulation data:', error.message);
     }
-  };  
+  };
 
   useEffect(() => {
     fetchSimulationData();
