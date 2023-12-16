@@ -14,33 +14,36 @@ const Login = () => {
     const navigate = useNavigate();
 
     async function handleGoogleLogin() {
-        const provider = new GoogleAuthProvider();
+    const provider = new GoogleAuthProvider();
 
-        try {
-            const result = await signInWithPopup(auth, provider);
-            const user = result.user;
-            console.log(user.uid);
+    try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        console.log(user.uid);
 
-            const userRef = doc(firestore, "users", user.uid);
+        const userRef = doc(firestore, "users", user.uid);
 
-            // Check if the document exists before setting data
-            const userDoc = await getDoc(userRef);
+        // Check if the document exists before setting data
+        const userDoc = await getDoc(userRef);
 
-            if (!userDoc.exists()) {
-                // Document doesn't exist, create it
-                await setDoc(userRef, {
-                    feedback: [],
-                    simulation: [],
-                });
+        if (!userDoc.exists()) {
+            // Document doesn't exist, create it
+            await setDoc(userRef, {
+                feedback: [],
+                simulation: [],
+            });
 
-                console.log("Document created for ID: ", user.uid);
-            }
-
-            navigate('/afterLogin');
-        } catch (error) {
-            console.error("Error signing in: ", error);
+            console.log("Document created for ID: ", user.uid);
+        } else {
+            console.log("User already exists with ID: ", user.uid);
         }
+
+        navigate('/afterLogin');
+    } catch (error) {
+        console.error("Error signing in: ", error);
     }
+}
+
 
     return (
         <div>
