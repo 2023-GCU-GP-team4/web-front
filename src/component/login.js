@@ -19,7 +19,7 @@ const Login = () => {
 
         try {
             const result = await signInWithPopup(auth, provider);
-            const userRef = result.user;
+            const user = result.user;
             console.log(user.uid);
             setUser(user);
             const userRef = doc(firestore, "users", user.uid);
