@@ -21,14 +21,14 @@ const Login = () => {
         const user = result.user;
         console.log(user.uid);
 
-        const userRef = doc(firestore, "users", user.uid);
+        const docRef = doc(firestore, "users", user.uid);
 
         // Check if the document exists before setting data
-        const userDoc = await getDoc(userRef);
+        const docSnap = await getDoc(docRef);
 
-        if (!userDoc.exists()) {
+        if (!docSnap.exists()) {
             // Document doesn't exist, create it
-            await setDoc(userRef, {
+            await setDoc(docRef, {
                 feedback: [],
                 simulation: [],
             });
