@@ -64,21 +64,21 @@ export default function Interview() {
             <div className="title_level"> <b> Interview </b> </div>
             <div className="contents">
                 <div className="middle">
-                    <Link to='/uploadPrStatement' className="outline_interview" style={{ textDecoration: 'none' }} onClick={handleContent1Click}>
+                    <Link to={`/uploadPrStatement/${id}`} className="outline_interview" style={{ textDecoration: 'none' }} onClick={handleContent1Click}>
                         <h3>1 : 1</h3>
                         <div className="picInt">
                             <img src={picInt1_mouseleave} alt="이미지" className="picInt_mouseleave"></img>
                             <img src={picInt1_mouseover} alt="이미지" className="picInt_mouseover"></img>
                         </div>
                     </Link>
-                    <Link to='/uploadPrStatement' className="outline_interview" style={{ textDecoration: 'none' }} onClick={handleContent2Click}>
+                    <Link to={`/uploadPrStatement/${id}`} className="outline_interview" style={{ textDecoration: 'none' }} onClick={handleContent2Click}>
                         <h3>1 : 2</h3>
                         <div className="picInt">
                             <img src={picInt2_mouseleave} alt="이미지" className="picInt_mouseleave"></img>
                             <img src={picInt2_mouseover} alt="이미지" className="picInt_mouseover"></img>
                         </div>
                     </Link>
-                    <Link to='/uploadPrStatement' className="outline_interview" style={{ textDecoration: 'none' }} onClick={handleContent3Click}>
+                    <Link to={`/uploadPrStatement/${id}`} className="outline_interview" style={{ textDecoration: 'none' }} onClick={handleContent3Click}>
                         <h3>1 : 3</h3>
                         <div className="picInt">
                             <img src={picInt3_mouseleave} alt="이미지" className="picInt_mouseleave"></img>

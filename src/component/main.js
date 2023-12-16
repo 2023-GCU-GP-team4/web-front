@@ -1,7 +1,7 @@
 import React from 'react';
 import { CSSTransition } from 'react-transition-group';
 import { Link, useNavigate } from 'react-router-dom';
-import { auth } from '../firebase/config';
+import { onAuthStateChanged, auth } from '../firebase/config';
 
 import './titleAnimation.css';
 import logo from '../img/mainlogo.png';
@@ -19,6 +19,30 @@ const Main = () => {
       console.error('Error signing out:', error);
     }
   };
+
+  const getUserFromAuthentication = () => {
+    return new Promise((resolve, reject) => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+            unsubscribe(); // Stop listening after the first change
+
+            if (user) {
+                resolve(user);
+            } else {
+                reject(new Error('User not authenticated'));
+            }
+        });
+    });
+};
+
+const handleFeedbackList = async () => {
+  try {
+      const user = await getUserFromAuthentication();
+      console.log("User ID:", user.uid);
+      navigate(`/feedbackList/${user.uid}`);
+  } catch (error) {
+      console.error("Error during presentation button click:", error.message);
+  }
+};
 
   return (
     <div>
@@ -44,9 +68,9 @@ const Main = () => {
         </CSSTransition>
       </div>
 
-      <Link to="/feedbacklist" className="bottom-text-line">
+      <div className="bottom-text-line" onClick={handleFeedbackList}>
         Feedback List
-      </Link>
+      </div>
       <Link to="/situation" className="bottom-text-line">
         Start
       </Link>

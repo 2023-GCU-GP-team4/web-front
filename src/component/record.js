@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import { getStorage, ref, uploadString, getDownloadURL, uploadBytes } from 'firebase/storage';
+import { getFirestore, addDoc, updateDoc } from 'firebase/firestore';
 import { app } from "../firebase/config";
 
 const AudioRecord = () => {
+  const urlParts = window.location.pathname.split('/');
+  const id = urlParts[urlParts.length - 1];
+  
   const [stream, setStream] = useState();
   const [media, setMedia] = useState();
   const [onRec, setOnRec] = useState(false);
