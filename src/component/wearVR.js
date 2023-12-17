@@ -13,7 +13,7 @@ function WearVR() {
     
     let timeoutId;
     timeoutId = setTimeout(() => {
-        navigate(`/loading/${id}`);
+        navigate(`/record/${id}`);
     }, 5000);
     
     return (

@@ -55,7 +55,7 @@ function App() {
           <Route path="/beforeLogin" element={<BeforeLogin />} />
           <Route path="/main" element={<Main />} />
           <Route path="/test" element={<AxiosTest />} />
-          <Route path="/record" element={<AudioRecord />} />
+          <Route path="/record/:id" element={<AudioRecord />} />
         </Routes>
       </BrowserRouter>
     </div>

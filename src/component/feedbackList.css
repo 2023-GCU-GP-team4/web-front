@@ -14,14 +14,30 @@
 }
 
 .list
-{}
+{
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.list::-webkit-scrollbar {
+    width: 1vw;
+}
+  
+.list::-webkit-scrollbar-thumb {
+    background-color: var(--beforeBorder); /* 스크롤 바의 색상 조절 */
+    border-radius: 6px; /* 스크롤 바 모서리 둥글게 조절 */
+}
 
 .block
 {
     display: flex;
     flex-direction: row;
-    border: 4px solid #B3DA94;
+    border: 4px solid var(--beforeBorder);
     border-radius: 30px;
+    width: 75vw;
+
+    margin-left: 10vw;
+    margin-right: 10vw;
     margin-bottom: 2vw;
 }
 
@@ -30,29 +46,27 @@
     margin-left: 5vw;
     font-family: "PaytoneOne";
     font-size: 2vw;
-    width: 20vw;
+    width: 30vw;
 }
 
 /*bin image*/
 .bin
 {
-    margin-top: 1.5vw;
+    margin-top: 1vw;
     margin-right: 3vw;
-    margin-left: 60vw;
+    margin-left: 40vw;
     position: relative;
 }
 
 .bin_mouseleave
-{
-    height: 5vw;
-}
+{ height: 4.5vw; }
 
 .bin_mouseover
 {
     position: absolute;
     top: 0px;
     left: 0px;
-    height: 5vw;
+    height: 4.5vw;
     display: none;
 }
 
@@ -73,7 +87,7 @@
 }
 
 .logo {
-    margin-top: 5vh;
+    margin-top: 4vh;
     margin-bottom: 3vh;
     margin-left: 85vw; /* 오른쪽으로 이동 */
     width: 12vw;
